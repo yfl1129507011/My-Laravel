@@ -11,6 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'IndexController@home')->name('home');
+Route::get('/help', 'IndexController@help')->name('help');
+Route::get('/about', 'IndexController@about')->name('about');
+
+Route::get('signup', 'UserController@signup')->name('signup');
+Route::get('signin', 'UserController@signin')->name('signin');
+Route::get('signout', 'UserController@signout')->name('signout');
