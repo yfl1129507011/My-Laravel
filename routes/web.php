@@ -16,5 +16,9 @@ Route::get('/help', 'IndexController@help')->name('help');
 Route::get('/about', 'IndexController@about')->name('about');
 
 Route::get('signup', 'UserController@signup')->name('signup');
+Route::get('store', 'UserController@store')->name('store');
 Route::get('signin', 'UserController@signin')->name('signin');
 Route::get('signout', 'UserController@signout')->name('signout');
+
+//定义用户资源路由
+Route::resource('user', 'UserController');
