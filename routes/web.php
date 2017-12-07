@@ -27,4 +27,11 @@ Route::post('signin', 'SessionsController@store')->name('signin');
 //销毁回话（退出登录）
 Route::delete('signout', 'SessionsController@destroy')->name('signout');
 
+// 邮箱确认
 Route::get('signup/confirm/{token}', 'UserController@confirmEmail')->name('confirm_email');
+
+// 密码重置功能
+Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
+Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
+Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
+Route::post('password/reset', 'Auth\ResetPasswordController@reset')->name('password.update');
