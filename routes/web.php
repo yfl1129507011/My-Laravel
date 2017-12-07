@@ -26,3 +26,5 @@ Route::get('signin', 'SessionsController@create')->name('signin');
 Route::post('signin', 'SessionsController@store')->name('signin');
 //销毁回话（退出登录）
 Route::delete('signout', 'SessionsController@destroy')->name('signout');
+
+Route::get('signup/confirm/{token}', 'UserController@confirmEmail')->name('confirm_email');
